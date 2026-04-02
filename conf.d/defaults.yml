@@ -1,0 +1,42 @@
+---
+common_config:
+  prefix_tokens:
+    org: "XX"
+    tenant: null
+    lifecycle: "XX"
+  prefix_token_order: [ "org", "tenant", "lifecycle", "location" ]
+  default_tags:
+    fab4cPatternManager: "fab4c/fab4c_third_party_access_controller"
+
+  # Toggle for debugging during development and troubleshooting
+  _debug_enabled: false
+
+# Default pattern feature configuration
+pattern_features:
+  custom_iam_role_policy:
+    WORX_ANNOTATIONS:
+      description: A custom IAM policy that should be attached to the permissions allocated to the 3rd Party
+      disruptive: false
+    enabled: false
+    content: |
+      {
+      }
+  iam_role_policy_attachments:
+    WORX_ANNOTATIONS:
+      description: A list of existing IAM policies in the account that should be attachd to the 3rd Party role created.
+      disruptive: false
+    enabled: false
+    arns:
+      - arn:aws:iam::aws:policy/job-function/ViewOnlyAccess
+
+pattern_payload:
+  third_party_aws_account_id: required-123456789123
+  third_party_secret: null
+  third_party_ipal: null
+  service_provider_requires_mfa: false
+  max_session_duration: 3600
+  third_party_aws_arns: [ "required-external-ARN", "required-external-ARN" ]
+
+# Internal payload for holding config that will not be exposed to the user. This
+# is intended for use with patterns that make use of other patterns
+internal_payload:

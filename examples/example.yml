@@ -1,0 +1,45 @@
+---
+common_config:
+  prefix_tokens:
+    org: "HIO"
+    tenant: "DEMO"
+    lifecycle: "DEV"
+  default_tags:
+    Project: fab4cWorXDemo
+    fab4cPatternManager: "fab4c/fab4c"
+
+fab4c_third_party_access_controller:
+  pattern_features:
+    # User custom IAM role policy
+    custom_iam_role_policy:
+      enabled: true
+      content: |
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": "s3:*",
+              "Resource": "*"
+            }
+          ]
+        }
+    # Attach policy to a role
+    iam_role_policy_attachments:
+      enabled: true
+      arns:
+        - arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess
+
+  pattern_payload:
+    third_party_id: FAB4C
+    third_party_aws_account_id: "121212121212"
+    third_party_ipal:
+      - 10.11.12.13/32
+    third_party_secret: d7748464-4f41-4421-8793-96245b51cd0c
+    third_party_aws_arns:
+      # An SSO Assumed Role ARN
+      - "arn:aws:sts::121212121212:assumed-role/AWSReservedSSO_AG-SSO-AWS-MSP-XA/jeff.barr@fab4c.com"
+      # An IAM Role ARN
+      - "arn:aws:iam::121212121212:role/AG-SSO-AWS-MSP-XA-Access"
+      # An IAM User ARN
+      - "arn:aws:iam::121212121212:user/iamjeffbarr"

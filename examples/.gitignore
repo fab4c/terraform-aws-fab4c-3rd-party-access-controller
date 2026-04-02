@@ -1,0 +1,32 @@
+# Local .terraform directories
+**/.terraform/*
+
+# Terraform state files
+terraform.tfstate
+*.tfstate.*
+
+# plan files
+*.plan
+
+# Crash log files
+crash.log
+
+# Terraform lock files
+.terraform.lock.hcl
+
+# Ignore override files as they are usually used to override resources locally and so
+# are not checked in
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Local payloads generated during Lambda assembly
+payload/
+*.zip
+
+# Local debug
+debug/
+keys/
+ssh-client*.conf
+development.yml
