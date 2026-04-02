@@ -34,6 +34,9 @@ content: |-
   {{ .Providers }}
 
 
+  {{ include "docs/pattern-doc-config-layers.md" }}
+
+
   {{ .Footer }}
 
 output:
