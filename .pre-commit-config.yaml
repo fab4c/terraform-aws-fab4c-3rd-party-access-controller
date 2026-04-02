@@ -5,6 +5,8 @@ repos:
   hooks:
     - id: tofu_fmt
     - id: tofu_docs
+      args:
+        - --args=--config=.terraform-docs.yml
     - id: tofu_tflint
       args:
         - --args=--disable-rule=terraform_deprecated_lookup
