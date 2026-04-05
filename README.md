@@ -6,9 +6,10 @@
 
 | Property       | Detail                                                                |
 | -------------- | --------------------------------------------------------------------- |
-| Description    | This Terraform pattern represents a security control that can be used to manage access for 3rd parties to AWS accounts |
 | Compatible     | ![badge](https://shields.io/badge/OpenTofu-v1.6+-ffda18?style=flat-square) ![badge](https://shields.io/badge/Terraform-v1.5+-7b42bc?style=flat-square) |
 | Support        | Professional Support available. Please see [SUPPORT](SUPPORT.md) for more details |
+| Description    | This Terraform pattern represents a security control that can be used to manage access for 3rd parties to AWS accounts |
+
 
 ## Reference Example
 
@@ -21,8 +22,9 @@ module "fab4c_third_party_access_controller" {
   #checkov:skip=CKV_TF_2:Ignore false positive on Terraform Registry modules with pinned version
   # See https://github.com/bridgecrewio/checkov/issues/6335 for more info
   # Normal usage
-  source             = "fab4c/fab4c-3rd-party-access-controller/aws"
-  version            = "1.5.0"
+  source  = "fab4c/fab4c-3rd-party-access-controller/aws"
+  version = "1.5.1"
+
   configuration_file = "./example.yml"
 
   # fab4c development usage
@@ -37,6 +39,7 @@ output "managed_resources" {
 }
 
 ```
+
 
 ## Inputs
 
@@ -62,10 +65,18 @@ output "managed_resources" {
 | <a name="provider_template"></a> [template](#provider\_template) | 2.2.0 |
 
 
-
 ## How Configuration Works
 
-This module uses a **layered configuration** approach. Rather than defining dozens of individual input variables, all configuration is expressed in a single YAML file that you provide. The module then combines that file with its own built-in defaults and live data discovered from AWS to produce a single, authoritative configuration object that drives every resource it creates.
+This module uses a **layered configuration** approach. Rather than defining 
+dozens of individual input variables, all configuration is expressed in a 
+single YAML file that you provide. The module then combines that file with 
+its own built-in defaults and live data discovered from AWS to produce a 
+single, authoritative configuration object that drives every resource it 
+creates.
+
+Because the YAML file is keyed by module name at the top level, a single 
+file can hold configuration for several modules side by side. Each module
+ignores every section that does not belong to it.
 
 The diagram below walks through that process step by step.
 
@@ -109,9 +120,12 @@ flowchart TD
     DS       --> RES
 ```
 
-> **Tip — one file, many modules.**  Because the YAML file is keyed by module name at the top level, a single file can hold configuration for several modules side by side. Each module ignores every section that does not belong to it.
 
 
 
+
+## Open Source License
+
+Please see [LICENSE.md](LICENSE.md) for details on how the code in this repo is licensed.
 
 <!-- END OF PRE-COMMIT-OPENTOFU DOCS HOOK -->
