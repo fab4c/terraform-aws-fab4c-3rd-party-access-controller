@@ -1,0 +1,1 @@
+| Description    | This Terraform pattern represents a security control that can be used to manage access for 3rd parties to AWS accounts |

@@ -1,11 +1,11 @@
 ---
 common_config:
   prefix_tokens:
-    org: "HIO"
+    org: "FAB4C"
     tenant: "DEMO"
     lifecycle: "DEV"
   default_tags:
-    Project: fab4cWorXDemo
+    Project: fab4c demo
     fab4cPatternManager: "fab4c/fab4c"
 
 fab4c_third_party_access_controller:

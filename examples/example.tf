@@ -6,8 +6,9 @@ module "fab4c_third_party_access_controller" {
   #checkov:skip=CKV_TF_2:Ignore false positive on Terraform Registry modules with pinned version
   # See https://github.com/bridgecrewio/checkov/issues/6335 for more info
   # Normal usage
-  source             = "fab4c/fab4c-3rd-party-access-controller/aws"
-  version            = "1.5.0"
+  source  = "fab4c/fab4c-3rd-party-access-controller/aws"
+  version = "1.5.1"
+
   configuration_file = "./example.yml"
 
   # fab4c development usage

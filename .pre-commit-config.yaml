@@ -1,5 +1,13 @@
 repos:
 
+- repo: git@fab4c.gitlab.com:fab4cloud/devtools/pre-commit-iac.git
+  rev: 0.1.0
+  hooks:
+    - id: fab4c_repo_contributors
+    - id: fab4c_tf_module_open_repo_contents
+    - id: fab4c_tf_module_validate_schema
+    - id: fab4c_tf_module_generate_docs
+
 - repo: https://github.com/tofuutils/pre-commit-opentofu
   rev: v2.2.2
   hooks:

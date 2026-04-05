@@ -18,12 +18,15 @@ sections:
 
 content: |-
   {{ .Header }}
+  {{ include "docs/pattern-description.md" }}
+
 
   ## Reference Example
 
   ```hcl
   {{ include "examples/example.tf" }}
   ```
+
 
   {{ .Inputs }}
 
@@ -33,9 +36,7 @@ content: |-
 
   {{ .Providers }}
 
-
   {{ include "docs/pattern-doc-config-layers.md" }}
-
 
   {{ .Footer }}
 
