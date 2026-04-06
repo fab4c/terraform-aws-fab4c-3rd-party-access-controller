@@ -14,7 +14,7 @@ common_config:
 # Default pattern feature configuration
 pattern_features:
   custom_iam_role_policy:
-    WORX_ANNOTATIONS:
+    FAB4C_ANNOTATIONS:
       description: A custom IAM policy that should be attached to the permissions allocated to the 3rd Party
       disruptive: false
     enabled: false
@@ -22,7 +22,7 @@ pattern_features:
       {
       }
   iam_role_policy_attachments:
-    WORX_ANNOTATIONS:
+    FAB4C_ANNOTATIONS:
       description: A list of existing IAM policies in the account that should be attachd to the 3rd Party role created.
       disruptive: false
     enabled: false
@@ -33,7 +33,7 @@ pattern_payload:
   third_party_aws_account_id: required-123456789123
   third_party_secret: null
   third_party_ipal: null
-  service_provider_requires_mfa: false
+  third_party_requires_mfa: false
   max_session_duration: 3600
   third_party_aws_arns: [ "required-external-ARN", "required-external-ARN" ]
 
