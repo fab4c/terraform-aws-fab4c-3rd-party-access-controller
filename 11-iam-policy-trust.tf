@@ -80,7 +80,7 @@ data "aws_iam_policy_document" "require_sp_mfa" {
     condition {
       test     = "Bool"
       variable = "aws:MultiFactorAuthPresent"
-      values   = [local.config_overlay.pattern_payload.service_provider_requires_mfa]
+      values   = [local.config_overlay.pattern_payload.third_party_requires_mfa]
     }
 
   }
@@ -105,7 +105,7 @@ data "aws_iam_policy_document" "combined_sp_policy_trust" {
     ),
 
     (
-      local.config_overlay.pattern_payload.service_provider_requires_mfa
+      local.config_overlay.pattern_payload.third_party_requires_mfa
       ? data.aws_iam_policy_document.require_sp_mfa.json
       : ""
     )

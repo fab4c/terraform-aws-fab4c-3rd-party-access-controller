@@ -12,7 +12,7 @@ type that allow you to customize the scale and behaviour of the resources provis
 ### Pattern Features
 
 
-
+  
 #### custom_iam_role_policy
 
 :::feature Feature Information
@@ -34,7 +34,7 @@ type that allow you to customize the scale and behaviour of the resources provis
 ##### Additional Feature Settings
 
 
-
+  
 -  `content`
 
   <div className="options-table">
@@ -56,7 +56,7 @@ type that allow you to customize the scale and behaviour of the resources provis
 <div className="pattern-feature-spacer" />
 
 
-
+  
 #### iam_role_policy_attachments
 
 :::feature Feature Information
@@ -78,7 +78,7 @@ type that allow you to customize the scale and behaviour of the resources provis
 ##### Additional Feature Settings
 
 
-
+  
 -  `arns`
 
   <div className="options-table">
@@ -100,7 +100,7 @@ type that allow you to customize the scale and behaviour of the resources provis
 ### Pattern Options
 
 
-
+  
 - `third_party_aws_account_id`
 
   <div className="options-table">
@@ -114,7 +114,7 @@ type that allow you to customize the scale and behaviour of the resources provis
 
 
 
-
+  
 - `third_party_secret`
 
   <div className="options-table">
@@ -129,7 +129,7 @@ type that allow you to customize the scale and behaviour of the resources provis
 
 
 
-
+  
 - `third_party_ipal`
 
   <div className="options-table">
@@ -144,8 +144,8 @@ type that allow you to customize the scale and behaviour of the resources provis
 
 
 
-
-- `service_provider_requires_mfa`
+  
+- `third_party_requires_mfa`
 
   <div className="options-table">
 
@@ -159,7 +159,7 @@ type that allow you to customize the scale and behaviour of the resources provis
 
 
 
-
+  
 - `max_session_duration`
 
   <div className="options-table">
@@ -174,7 +174,7 @@ type that allow you to customize the scale and behaviour of the resources provis
 
 
 
-
+  
 - `third_party_aws_arns`
 
   <div className="options-table">

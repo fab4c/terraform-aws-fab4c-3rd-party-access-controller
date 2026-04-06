@@ -48,7 +48,7 @@ output "resources" {
     role_arn  = aws_iam_role.pattern.arn
 
     security_third_party_secret = local.config_overlay.pattern_payload.third_party_secret
-    security_require_mfa        = local.config_overlay.pattern_payload.service_provider_requires_mfa
+    security_require_mfa        = local.config_overlay.pattern_payload.third_party_requires_mfa
     security_role_ipal          = local.config_overlay.pattern_payload.third_party_ipal
 
   }
