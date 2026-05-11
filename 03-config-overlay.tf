@@ -61,7 +61,7 @@ locals {
 
   # Regional resource prefix
   _regional_prefix_tokens = merge(
-    { location = lookup(local._lut_aws.aws_region_to_shortcode, data.aws_region.current.name, "ASSERT-NO-LUT-MAPPING") },
+    { location = lookup(local._lut_aws.aws_region_to_shortcode, data.aws_region.current.region, "ASSERT-NO-LUT-MAPPING") },
     local._decoded_overlay.common_config.prefix_tokens
   )
   _resource_prefix = join("-", compact([for item in local._prefix_token_order : lookup(local._regional_prefix_tokens, item, null)]))
