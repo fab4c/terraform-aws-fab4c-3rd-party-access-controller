@@ -41,6 +41,12 @@
 #     }
 #   }
 #
+# Ensure that the output has a description set
+#
+#   output "managed_resources" {
+#     description = "Managed resources"
+#     value = ...
+#
 
 output "resources" {
   description = "Managed resources"
