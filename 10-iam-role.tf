@@ -1,9 +1,12 @@
 resource "aws_iam_role" "pattern" {
 
-  name = format("%s-XA-Role-%s-%s",
-    local.config_overlay.common_config.global_resource_prefix,
-    local.config_overlay.pattern_payload.third_party_id,
-    local.config_overlay.stack_id
+  name = coalesce(
+    local.config_overlay.pattern_payload.third_party_role_name,
+    format("%s-XA-Role-%s-%s",
+      local.config_overlay.common_config.global_resource_prefix,
+      local.config_overlay.pattern_payload.third_party_id,
+      local.config_overlay.stack_id
+    )
   )
 
   assume_role_policy   = data.aws_iam_policy_document.combined_sp_policy_trust.json

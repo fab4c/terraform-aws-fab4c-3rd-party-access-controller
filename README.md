@@ -52,7 +52,7 @@ output "managed_resources" {
 
 | Name | Description |
 |------|-------------|
-| <a name="output_resources"></a> [resources](#output\_resources) | n/a |
+| <a name="output_resources"></a> [resources](#output\_resources) | Managed resources |
 
 
 ## Providers
