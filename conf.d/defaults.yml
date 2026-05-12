@@ -18,6 +18,7 @@ pattern_features:
       description: A custom IAM policy that should be attached to the permissions allocated to the 3rd Party
       disruptive: false
     enabled: false
+    policy_name: null
     content: |
       {
       }
@@ -30,6 +31,7 @@ pattern_features:
       - arn:aws:iam::aws:policy/job-function/ViewOnlyAccess
 
 pattern_payload:
+  third_party_role_name: null
   third_party_aws_account_id: required-123456789123
   third_party_secret: null
   third_party_ipal: null

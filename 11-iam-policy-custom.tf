@@ -33,10 +33,13 @@ resource "aws_iam_policy" "custom_policy" {
     : 0
   )
 
-  name = format("%s-XA-Custom-%s-%s",
-    local.config_overlay.common_config.global_resource_prefix,
-    local.config_overlay.pattern_payload.third_party_id,
-    local.config_overlay.stack_id
+  name = coalesce(
+    local.config_overlay.pattern_features.custom_iam_role_policy.policy_name,
+    format("%s-XA-Custom-%s-%s",
+      local.config_overlay.common_config.global_resource_prefix,
+      local.config_overlay.pattern_payload.third_party_id,
+      local.config_overlay.stack_id
+    )
   )
 
   description = "IAM policy for external service provider acccess"

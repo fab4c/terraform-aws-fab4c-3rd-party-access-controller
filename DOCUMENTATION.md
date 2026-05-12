@@ -35,6 +35,21 @@ type that allow you to customize the scale and behaviour of the resources provis
 
 
   
+-  `policy_name`
+
+  <div className="options-table">
+
+  |   |   |
+  |---|---|
+  | Setting is?     | Optional |
+  | Default value | `None` |
+
+  </div>
+
+
+
+
+  
 -  `content`
 
   <div className="options-table">
@@ -98,6 +113,21 @@ type that allow you to customize the scale and behaviour of the resources provis
 
 
 ### Pattern Options
+
+
+  
+- `third_party_role_name`
+
+  <div className="options-table">
+
+  |   |   |
+  |---|---|
+  | Setting is?     | Optional |
+  | Default value | `None` |
+
+  </div>
+
+
 
 
   

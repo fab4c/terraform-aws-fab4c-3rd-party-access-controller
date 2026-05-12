@@ -41,8 +41,15 @@
 #     }
 #   }
 #
+# Ensure that the output has a description set
+#
+#   output "managed_resources" {
+#     description = "Managed resources"
+#     value = ...
+#
 
 output "resources" {
+  description = "Managed resources"
   value = {
     role_name = aws_iam_role.pattern.name
     role_arn  = aws_iam_role.pattern.arn

@@ -23,7 +23,7 @@ module "fab4c_third_party_access_controller" {
   # See https://github.com/bridgecrewio/checkov/issues/6335 for more info
   # Normal usage
   source  = "fab4c/fab4c-3rd-party-access-controller/aws"
-  version = "1.5.1"
+  version = "1.5.3"
 
   configuration_file = "./example.yml"
 
@@ -35,9 +35,9 @@ module "fab4c_third_party_access_controller" {
 
 # Show important or useful information about the resources managed by this pattern
 output "managed_resources" {
-  value = module.fab4c_third_party_access_controller.resources
+  description = "Managed resources"
+  value       = module.fab4c_third_party_access_controller.resources
 }
-
 ```
 
 
@@ -52,7 +52,7 @@ output "managed_resources" {
 
 | Name | Description |
 |------|-------------|
-| <a name="output_resources"></a> [resources](#output\_resources) | n/a |
+| <a name="output_resources"></a> [resources](#output\_resources) | Managed resources |
 
 
 ## Providers
